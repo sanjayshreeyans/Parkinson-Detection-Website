@@ -1,32 +1,12 @@
-# Camera Example
 
-<p>
-  <!-- iOS -->
-  <a href="https://itunes.apple.com/app/apple-store/id982107779">
-    <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  </a>
-  <!-- Android -->
-  <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample">
-    <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  </a>
-  <!-- Web -->
-  <a href="https://docs.expo.dev/workflow/web/">
-    <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-  </a>
-</p>
+## What it does
+ParkinDetectAI prompts users to submit a drawing - either a spiral or wave - via camera. Utilizing past data, the API analyzes the drawing to determine the presence of Parkinson's disease, offering swift and accurate detection for proactive health management. Through innovative technology, it sets a new standard in early diagnosis, ultimately transforming lives.
 
-This example shows how to take a picture and display it.
+## How we built it
+We started off by searching for the best-performing machine learning model, which ended up being XGBoost, and finetuning and perfecting it since it is the most vital part of this project, and later on, we ended up creating two models: one for spirals and another for waves since the two drawing types were too different from each other. We used Kaggle for the dataset, Scikit-Learn and XGBoost for model testing, OpenCV for image processing, and Pickle for model persistence. Once we were pleased with the results, we began developing the interactive website using React Native, {THE THING THAT ALLOWED CAMERA ACCESS AND ANYTHING ELSE}, and the accompanying Django API, which opens the pre-trained model saved with Pickle for a swifter diagnosis and allows the user to specify the type of drawing they are sending.
 
-## 🚀 How to use
+## Challenges we ran into
+While developing our waves model, it initially had a significantly lower accuracy (77%) than our spirals model, but after tweaking the data preprocessing and adjusting model parameters, we were able to beat our spirals model, with a new accuracy of 93%.
 
-- Install packages with `yarn` or `npm install`.
-  - If you have native iOS code run `npx pod-install`
-- Run `yarn start` or `npm run start` to start the bundler.
-- Open the project in a React runtime to try it:
-  - iOS: [Client iOS](https://itunes.apple.com/app/apple-store/id982107779)
-  - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
-  - Web: Any web browser on [localhost or through HTTPS](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts)
-
-## 📝 Notes
-
-- Learn more about [Expo Camera](https://docs.expo.dev/versions/latest/sdk/camera).
+## Accomplishments that we're proud of
+- Our AI model's ability to achieve a 90% accuracy rate in determining whether the user of the application has Parkinson's disease.
