@@ -10,3 +10,5 @@ While developing our waves model, it initially had a significantly lower accurac
 
 ## Accomplishments that we're proud of
 - Our AI model's ability to achieve an average 90% accuracy rate in determining whether the user of the application has Parkinson's disease.
+## Our API
+Avinash Devineni created a wonderful API that handles the back-end requests made by the website, the API is solely responsible for communicating the predictions made by the model with the front-end website. (https://github.com/avashTheGoat/ParkinDetectAPI)
